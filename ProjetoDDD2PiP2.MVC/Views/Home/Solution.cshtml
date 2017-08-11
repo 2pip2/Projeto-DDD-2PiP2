@@ -1,0 +1,31 @@
+﻿@using Portal.Infra.CrossCutting.Identity.Model
+@model IEnumerable< IndexViewModel>
+
+@{
+    ViewBag.Title = "Solution";
+    Layout = "~/Views/Shared/_Layout - Externo.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="~/images/Verre.png" class="img-responsive" alt="2.PI" width="400" height="400" />
+        </div>
+        <div class="col-sm-8">
+            <h1>Verre - Vidros Inteligentes</h1>
+            <h2>Prático e Fácil</h2>
+            <h3>Tenha o controle total da sua equipe comercial</h3>
+            <div>
+                <p>
+                    Toda a telefonia da sua empresa será através do Verre.
+                </p>
+            </div>
+            <p>
+                Saiba se seu vendedor está ligando para os seus clientes!
+                <hr/>
+                @Html.ActionLink("Tente agora!", "Register", "Account", null, new { @class = "btn btn-danger" })
+            </p>
+        </div>
+    </div>
+</div>
+
+

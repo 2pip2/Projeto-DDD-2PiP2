@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />    
+    <script type="text/javascript"
+            src="//media.twiliocdn.com/sdk/js/client/v1.4/twilio.min.js"></script>
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Verre</title>
+    @Styles.Render("~/Content/css")    
+    
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- GOOGLE FONT -->
+    
+
+</head>
+<body>
+    
+    <!-- LOGO HEADER END-->
+    <section class="menu-section">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse ">
+                        <img src="~/Image/Verre.png" /> 
+                        
+                        <ul id="menu-top" class="nav navbar-nav navbar-right">
+                                            
+                            
+                            <li>@Html.ActionLink("Persona", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Conta", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Encomendas", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Fabrica", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Produto", "Index", "Home")</li>
+                            <li><a href="#" class="btn btn-danger pull-right">Logout</a></li>
+                            
+                        </ul>
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+                  
+        </div>
+    </section>
+    
+    
+    <div class="container body-content">
+
+        @RenderBody()
+        
+        <footer>
+            
+            <p>&copy; @DateTime.Now.Year Verre - Inteligencia do Vidro nas Nuvens</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="/Scripts/custom.js"></script>
+
+</body>
+</html>

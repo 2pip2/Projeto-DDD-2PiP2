@@ -1,0 +1,77 @@
+﻿@using Portal.Infra.CrossCutting.Identity.Model
+@model LoginViewModel
+@{
+    ViewBag.Title = "Acessar";
+}
+<hr />
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-8">
+        <section id="loginForm">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">Entrar no Sistema</div>
+                </div>
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Entrar" class="btn btn-default" />
+                            <hr />
+                            <p>
+                                <a href="@Url.Action("Register", "Account")"><span class="glyphicon glyphicon-user"></span> Ainda não cadastrado?</a>
+                            </p>
+                            <p>
+                                <a href="@Url.Action("ForgotPassword", "Account")"><span class="glyphicon glyphicon-user"></span> Esqueceu a senha?</a>
+                            </p>
+                            <section id="socialLoginForm">
+                                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                            </section>
+                        </div>
+                        
+
+                    </div>
+
+                    @* Enable this once you have account confirmation enabled for password reset functionality
+                <p>
+                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                </p>*@
+                }
+
+                
+            </div>
+
+            </section>
+        
+    </div>
+    
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

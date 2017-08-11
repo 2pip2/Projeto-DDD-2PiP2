@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Verre - Telefonia";
+}
+
+<div id="controls">
+    <div id="info">
+        <p class="instructions">Dados do Cliente</p>
+        <div id="client-name"></div>
+    </div>
+  <div id="call-controls">
+    <p class="instructions">Faça a ligação:</p>
+    <input id="phone-number" type="text" placeholder="Número do telefone" />
+    <button id="button-call">Ligar</button>
+
+      @using (Html.BeginForm("ClickToCall", "Home", FormMethod.Post))
+      {
+              <button id="button-hangup" type="submit">Desligar</button>
+             
+      }
+          
+  </div>
+  <div id="log"></div>
+</div>
+
+@section scripts {
+  @Scripts.Render("~/Scripts/quickstart.js")
+}

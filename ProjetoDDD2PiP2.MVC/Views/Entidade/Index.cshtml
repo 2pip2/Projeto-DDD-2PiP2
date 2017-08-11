@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ProjetoDDD2PiP2.MVC.ViewModels.EntidadeViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PalavraChave)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PalavraChave)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EntidadeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EntidadeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EntidadeId })
+        </td>
+    </tr>
+}
+
+</table>

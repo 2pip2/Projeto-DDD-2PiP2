@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A7B8CC8-4824-4285-AADF-0BA252551D39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjetoDDD2PiP2.Application</RootNamespace>
+    <AssemblyName>ProjetoDDD2PiP2.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppServiceBase.cs" />
+    <Compile Include="SoluctionAppService.cs" />
+    <Compile Include="Interface\IDeveloperAppService.cs" />
+    <Compile Include="Interface\ISoluctionAppService.cs" />
+    <Compile Include="DeveloperAppService.cs" />
+    <Compile Include="PersonaAppService.cs" />
+    <Compile Include="EntidadeAppService.cs" />
+    <Compile Include="Interface\IAppServiceBase.cs" />
+    <Compile Include="Interface\IEntidadeAppService.cs" />
+    <Compile Include="Interface\IPersonaAppService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoDDD2PiP2.Domain\ProjetoDDD2PiP2.Domain.csproj">
+      <Project>{d09c4d98-bdcc-4b12-bbc6-51b953f39944}</Project>
+      <Name>ProjetoDDD2PiP2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjetoDDD2PiP2.Infra.Data\ProjetoDDD2PiP2.Infra.Data.csproj">
+      <Project>{7af17172-9831-4722-a0b8-cb865b7cebe0}</Project>
+      <Name>ProjetoDDD2PiP2.Infra.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Verre.Domain\Verre.Domain.csproj">
+      <Project>{105c240c-701b-4354-a50d-9c6adfdc0d04}</Project>
+      <Name>Verre.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Verre\Verre.Infra.Data.csproj">
+      <Project>{597de0f2-da7e-4d2b-8a41-74f30fb2f008}</Project>
+      <Name>Verre.Infra.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

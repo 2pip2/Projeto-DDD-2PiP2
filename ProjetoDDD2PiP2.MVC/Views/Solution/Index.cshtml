@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProjetoDDD2PiP2.MVC.ViewModels.SoluctionViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Soluciton)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scope)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soluciton)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Scope)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activate)
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("Acessar", "SolucaoFoco", "Solution", null, new { @class = "btn btn-danger", SolutionRegra = "Verre-Admin" })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,41 @@
+﻿
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="@Url.Action("Index", "Home")"><img src="~/images/2pip2.png" class="img-circle" alt="2.PI" width="20" height="20" /></a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"> @User.Identity.GetUserName()                   
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="@Url.Action("Index", "Manage")">Minhas Configurações</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Minhas Soluções</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gerenciamento
+                                     <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="@Url.Action("Index", "Persona")">Personas</a></li>
+                    <li><a href="@Url.Action("Index", "Entidade")">Entidades</a></li>
+                    <li><a href="@Url.Action("Index", "Solution")">Soluções</a></li>
+                    <li><a href="@Url.Action("Index", "RolesAdmin")">Regras</a></li>
+                </ul>
+            </li>
+
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Sair</a></li>
+        </ul>
+            }
+            }
+            else
+            {
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href=""><span class="glyphicon glyphicon-user"></span> Blog</a></li>
+                <li><a href="@Url.Action("Register", "Account")"><span class="glyphicon glyphicon-user"></span> Registrar</a></li>
+                <li><a href="@Url.Action("Login", "Account")"><span class="glyphicon glyphicon-log-in"></span> Logar</a></li>
+            </ul>
+            }

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<body>
+    @using (Html.BeginForm("MakeCall", "Home", FormMethod.Post))
+    {
+        <div>
+            Qual o telefone que deseja ligar: @Html.TextBox("number")
+            <button type="submit">Make Call</button>
+        </div>
+       
+    }
+    @using (Html.BeginForm("ClickToCall", "Home", FormMethod.Post))
+    {
+    <div>
+        Qual o telefone que deseja ligar: @Html.TextBox("number")
+        <button type="submit">Click to Call</button>
+    </div>
+    }
+</body>

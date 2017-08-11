@@ -1,0 +1,49 @@
+﻿@model ProjetoDDD2PiP2.MVC.ViewModels.SoluctionViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout - Interno.cshtml";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Soluciton)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluciton)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Scope)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Scope)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+@if (Request.IsAuthenticated) { 
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SoluctionId }) 
+}
+    @Html.ActionLink("Voltar", "Index")
+</p>

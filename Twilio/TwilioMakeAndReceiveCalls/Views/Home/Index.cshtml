@@ -1,0 +1,18 @@
+﻿@model dynamic
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        @using (Html.BeginForm("MakeCall", "Home", FormMethod.Post))
+        {
+            <div>
+                Enter a number: @Html.TextBox("number")
+                <button type="submit">Make Call</button>
+            </div>
+        }
+    </body>
+</html>
